@@ -31,6 +31,12 @@ let examtitel = $.querySelector("#examtitel2")
 let education = $.querySelector(".education")
 let School = $.querySelector(".School")
 
+let mainnavigation = $.querySelector(".main-navigation")
+let branding = $.getElementById("branding")
+let upTo = $.querySelector(".upTo")
+let imgheder = $.getElementById("imgheder")
+let moon = $.getElementById("moon")
+
 
 
 let studentInformation = [
@@ -121,7 +127,41 @@ function blockex(){
     }
 }
 
+function scrollHandler(){
+    if(document.documentElement.scrollTop !=0){
+        upTo.style.display = "block"
+
+    } else {
+        upTo.style.display = "none"
+    }
+}
+
+function uptoHandler(){
+    document.documentElement.scrollTop = 0
+}
+
+function clickmoonHandler(){
+    document.body.classList.toggle('dark')
+
+    if (document.body.className.includes('dark')) {
+        localStorage.setItem('theam', 'dark')
+    } else {
+        localStorage.setItem('theam', 'light')
+    }
+}
+
+window.onload = function(){
+    let theam = localStorage.getItem('theam')
+
+    if (theam === "dark") {
+        document.body.classList.add('dark')
+    }
+}
+
 button.addEventListener("click", sendIn)
 buttonforget.addEventListener("click", forgetPass)
 forg.addEventListener("click", showformforget)
 blockexam.addEventListener("click", blockex)
+document.addEventListener("scroll", scrollHandler)
+upTo.addEventListener("click", uptoHandler)
+moon.addEventListener("click", clickmoonHandler)
