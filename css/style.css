@@ -2301,6 +2301,71 @@ a{
     float: right
 }
 
+.header-collapse .site-header {
+    position: fixed;
+}
+
+
+.upTo{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.upTo .fas{
+    width: 20px;
+    background: #f50057;
+    padding: 16px;
+    border-radius: 100px;
+    position: fixed;
+    bottom: 10px;
+    padding-left: 30px;
+    transition: 0.3s;
+    color: wheat;
+}
+
+.upTo .fas:hover{
+    background: wheat;
+    box-shadow: 0px 0px 10px 0px black;
+    color: #000;
+}
+
+.site-header .container .fas{
+    position: absolute;
+    right: 30px;
+    top: 50px;
+}
+
+/* dark moad */
+
+.dark{
+    background-color: #2b2b2b;
+}
+
+.dark #moon{
+    color: yellow;
+}
+
+.dark .row .left p{
+    color: rgb(218, 218, 218);
+}
+
+.dark .row .left h3{
+    background-color: #f50057;
+}
+
+.dark .row .rit .box {
+    background-color: rgb(59, 59, 59);
+}
+
+.dark .row .rit .box p{
+    color: rgb(218, 218, 218);;
+}
+
+.dark .site-header .container .site-description{
+    color: yellow;
+}
+
 /* media */
 @media screen and (max-width: 1400px) {
     .rit, .left, .leftcard, .midcard, .ritcard, .form{
@@ -2323,5 +2388,11 @@ a{
         border-top-right-radius: 5%;
         border-top-left-radius: 5%;
         border-bottom-right-radius: 0%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .site-header .container .fas {
+        right: 17px;
+        top: 12px;  
     }
 }
